@@ -22,7 +22,7 @@ locals {
   cluster_version = var.cluster_version
   region          = var.region
 
-  vpc_cidr = "10.0.0.0/16"
+  vpc_cidr = var.vpc_cidr
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
 
   tags = {
@@ -204,7 +204,7 @@ module "eks" {
         echo "you are free little kubelet!"
       EOT
 
-      capacity_type        = "SPOT"
+      capacity_type        = var.capacity_type
       force_update_version = true
       instance_types       = [var.instance_type]
       labels = {
