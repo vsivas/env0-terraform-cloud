@@ -205,7 +205,7 @@ module "eks" {
 
       capacity_type        = var.capacity_type
       force_update_version = true
-      instance_types       = [var.instance_type]
+      instance_types       = var.instance_types
       labels = {
         GithubRepo = "terraform-aws-eks"
         GithubOrg  = "terraform-aws-modules"

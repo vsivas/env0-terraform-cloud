@@ -16,10 +16,10 @@ variable "cluster_name" {
   default     = "sam_eks_cluster"
 }
 
-variable "instance_type" {
+variable "instance_types" {
   description = "EC2 instances used for K8s nodes"
-  type        = string
-  default     = "t2.small"
+  type        = list
+  default     = ["t2.small"]
 }
 
 variable "capacity_type" {
