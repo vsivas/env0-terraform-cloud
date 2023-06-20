@@ -18,17 +18,16 @@ data "aws_caller_identity" "current" {}
 data "aws_availability_zones" "available" {}
 
 locals {
-  name            = "ex-${replace(basename(path.cwd), "_", "-")}"
-  cluster_version = "1.27"
-  region          = "eu-west-1"
+  name            = var.cluster_name
+  cluster_version = var.cluster_version
+  region          = var.region
 
   vpc_cidr = "10.0.0.0/16"
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
 
   tags = {
     Example    = local.name
-    GithubRepo = "terraform-aws-eks"
-    GithubOrg  = "terraform-aws-modules"
+
   }
 }
 
@@ -207,7 +206,7 @@ module "eks" {
 
       capacity_type        = "SPOT"
       force_update_version = true
-      instance_types       = ["t2.micro"]
+      instance_types       = [var.instance_type]
       labels = {
         GithubRepo = "terraform-aws-eks"
         GithubOrg  = "terraform-aws-modules"
