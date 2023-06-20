@@ -1,5 +1,5 @@
 provider "aws" {
-  region = local.region
+  region = var.region
 }
 
 provider "kubernetes" {
@@ -20,7 +20,6 @@ data "aws_availability_zones" "available" {}
 locals {
   name            = var.cluster_name
   cluster_version = var.cluster_version
-  region          = var.region
 
   vpc_cidr = var.vpc_cidr
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
