@@ -11,7 +11,3 @@ module "eks" {
   cluster_max_size     = 3
   cluster_desired_size = 2
 }
-
- aws eks describe-addon-versions --addon-name aws-ebs-csi-driver
-
- 35.209.124.137
