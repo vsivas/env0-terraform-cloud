@@ -1,6 +1,6 @@
 module "eks" {
   source  = "app.terraform.io/TeKanAid/eks/aws"
-  version = "0.0.5"
+  version = "0.0.7"
 
   region = "us-east-1"
   cluster_version      = "1.27"
@@ -11,3 +11,7 @@ module "eks" {
   cluster_max_size     = 3
   cluster_desired_size = 2
 }
+
+ aws eks describe-addon-versions --addon-name aws-ebs-csi-driver
+
+ 35.209.124.137
