@@ -24,3 +24,22 @@ Example:
 aws eks --region us-east-1 update-kubeconfig \
     --name env0_eks_cluster
 ```
+
+## Resources that will get provisioned:
+
+- A VPC
+- 3 private subnets
+- 3 public subnets
+- An Internet Gateway
+- A NAT Gateway
+- An EIP
+- Public and private routes and routing tables
+- EKS cluster
+- EKS cluster encryption
+- EKS Node Group
+- A KMS Key
+- EBS CSI EKS Add-on
+- Cloudwatch Log Group
+- OIDC provider
+- Some security groups
+- Some IAM roles and policies
