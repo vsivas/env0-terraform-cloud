@@ -18,3 +18,9 @@ Once Terraform is done, run the command below to update your kubeconfig and acce
 aws eks --region $(terraform output -raw region) update-kubeconfig \
     --name $(terraform output -raw cluster_name)
 ```
+
+Example:
+```bash
+aws eks --region us-east-1 update-kubeconfig \
+    --name env0_eks_cluster
+```
