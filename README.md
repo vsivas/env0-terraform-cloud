@@ -1,6 +1,6 @@
 # Overview
 
-This is a repo to demo Terraform Cloud features.
+This is a repo to demo Terraform Cloud features. Here we create AWS EKS cluster along other 54 resources
 
 ## Instructions
 
